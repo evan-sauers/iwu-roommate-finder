@@ -1,0 +1,54 @@
+body {
+    background-image: url("../images/login-background.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+h1 {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 48px;
+}
+
+#login {
+    background-color: rgba(255, 255, 255, .75);
+    padding: 80px 0px 100px 0px;
+    margin: 150px 450px 20px 450px;
+    text-align: center;
+}
+
+#username {
+    display: inline;
+}
+
+#check {
+    display: inline;
+    float: right;
+}
+
+.form {
+    padding: 10px 0px 10px 10px;
+    margin-top: 5px;
+    width: 300px;
+}
+
+#loginButton {
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px 0px 10px 0px;
+}
+
+#createButton {
+    margin-top: 10px;
+    width: 300px;
+    padding: 10px 0px 10px 0px;
+}
+
+footer {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
