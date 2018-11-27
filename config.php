@@ -1,10 +1,10 @@
 <?php
 
-// Configure the server and database
+// Configure the server 127.0.0.1 and database
 $server='127.0.0.1';
-$username='root';
-$password='';
-$database='pet_forum';
+$username='ccarter';
+$password='carter';
+$database='roommate_finder';
 
 // Create connection to MySQLWorkbench
 $conn = new mysqli($server, $username, $password, $database);

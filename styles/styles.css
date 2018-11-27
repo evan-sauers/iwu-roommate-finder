@@ -7,29 +7,116 @@ body {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 80px !important;
 }
 
 #logo {
     width: 65px;
 }
 
-.navbar-brand {
-
+ol li {
+    padding-top: 50px;
 }
 
-.col-lg-3 {
-    margin: 40px 0px 40px 40px;
-    padding: 30px 30px 30px 30px !important;
+#profile {
+    margin: 40px 40px 0px 0px;
+    display: inline-block;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 3px 8px 22px #888888;
+    float: right;
+}
+
+#surveyButton {
+    background-color: rgba(229, 0, 45, 1);
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 5px 5px 40px;
+    width: 300px;
+}
+
+#surveyButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#surveyButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#surveyButton:hover span {
+    padding-right: 25px;
+}
+
+#surveyButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.content {
+    margin: 40px 40px 40px 40px;
+    padding: 30px 30px 80px 30px !important;
     background-color: #FFFFFF;
-    box-shadow: 3px 8px 22px #888888 ;
+    box-shadow: 3px 8px 22px #888888;
 }
 
 
-.col-lg-8 {
-    margin: 40px 0px 40px 40px;
-    padding: 30px 30px 30px 30px !important;
-    background-color: #FFFFFF;
-    box-shadow: 3px 8px 22px #888888 ;
+.welcome {
+    padding: 100px 40px 20px 40px !important;
     
 }
+
+
+
+
+
+
+@media (max-width: 991px) {
+    #surveyButton {
+        width: 200px;
+    }
+    
+    #profile {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+}
+
+
+@media (max-width: 445px) {
+    #surveyButton {
+        font-size: 20px;
+        width:150px;
+    }
+    
+    #profile {
+        float: none;
+        width: 225px;
+        height: 225px;
+        margin-bottom: 40px;
+    }
+}
+
+
+
+
+
+
+
+

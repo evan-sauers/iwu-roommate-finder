@@ -1,5 +1,8 @@
 <?php
     //include('session.php');
+
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +37,10 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">My Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Insert Link</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
@@ -49,22 +52,35 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Process Section -->
-                <div class="col-lg-3">
-                    <h2><u>Your Process</u></h2>
-                    <ol>
-                        <li>Take The Survey</li>
-                        <li>Find A Roommate</li>
-                        <li>Choose Your Housing</li>
-                    </ol>
+                <div class="col-lg-4">
+                    <div class="content">
+                        <h2><u>Your Process</u></h2>
+                        <ol>
+                            <h3><li>Take The Survey</li>
+                            <li>Find A Roommate</li>
+                            <li>Choose Your Housing</li></h3>
+                        </ol>
+                    </div>
                 </div>
-
                 <!-- Welcome Section -->
                 <div class="col-lg-8">
-                    <div class="row">
-                        <h1>Welcome</h1>
-                    </div>
-                    <div class="row">
-                        <button type="submit">Take the Survey</button>
+                    <div class="content"> 
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="welcome">  
+                                    <h1>Welcome</h1>
+                                    <!--<h4><?php echo $session; ?></h4>-->
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img id="profile" src="images/cynthia.jpg" alt="Profile Image">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button id="surveyButton" type="submit"><span>Take the Survey</span></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
