@@ -48,36 +48,42 @@
                 <div class="col-lg-12">
                 <!-- LOGIN FORMS -->
                 <form action="create.php" method="post" id="login">
+                    <img class="logo" src="images/logo.PNG">
                     <h1>IWU Roommate Finder</h1>
                     <p>Create a username and password:</p>
                     <div class="error"><i><?= $_SESSION['error']; ?></i></div>
                     <input id="username" class="form" type="text" name="username" placeholder="username" required><p id="check"></p>
                     <input class="form" type="password" name="password" placeholder="password" required><br>
                     <input class="form" type="password" name="confirmPass" placeholder="confirm password" required><br>
-                    <input id="createButton" class="btn btn-primary" value="Submit" type="submit">
+                    <input id="loginButton" class="btn" value="Submit" type="submit">
+                    <button id="createButton" class="btn btn-basic" value="Back" onclick="window.location.href='login.php'">Back</button>
                 </form>
                 </div>
                 <footer>
-                    <p>Created by Cynthia Carter, Evan Sauers, and Josh Schoonmaker.</p>
+                    <p>Created by Cynthia Carter, Evan Sauers, and Joshua Schoonmaker.</p>
                 </footer>
                     <script>
-                    // Use AJAX to check availability of username
-                    let us = document.getElementById("username");
-                    let check = document.getElementById("check");
-
-                    us.addEventListener("input", function(event){
-
-                        let xhr = new XMLHttpRequest();
-
-                        xhr.onreadystatechange=function() {
-                            if (this.readyState === 4 && this.status === 200) {
-                                // Display response
-                                check.innerHTML = xhr.responseText;
-                            }   
+                        function create(){
+                            window.location = 'login.php';
                         }
-                        xhr.open("GET", "username.php?us=" + us.value, true);
-                        xhr.send();
-                    });
+                        
+                        // Use AJAX to check availability of username
+                        let us = document.getElementById("username");
+                        let check = document.getElementById("check");
+
+                        us.addEventListener("input", function(event){
+
+                            let xhr = new XMLHttpRequest();
+
+                            xhr.onreadystatechange=function() {
+                                if (this.readyState === 4 && this.status === 200) {
+                                    // Display response
+                                    check.innerHTML = xhr.responseText;
+                                }   
+                            }
+                            xhr.open("GET", "username.php?us=" + us.value, true);
+                            xhr.send();
+                        });
                 </script>
             </div>
         </div>

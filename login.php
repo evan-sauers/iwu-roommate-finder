@@ -20,7 +20,8 @@
             
             header("location: dashboard.php");
         }else{
-            echo "<span style=\"color:red;\">Username/Password Invalid</span>";
+            // Error if username/password is invalid
+            $_SESSION['error'] = "<span style=\"color:red;\">Username/Password Invalid</span>";
         }
     }
 ?>
@@ -41,21 +42,18 @@
             <div class="row">
                 <div class="col-lg-12">
                 <!-- LOGIN FORMS -->
-                <form action="" method="post" id="login">
+                <form method="post" id="login">
+                    <img class="logo" src="images/logo.PNG">
                     <h1>IWU Roommate Finder</h1>
+                    <div id="error"><i><?= $_SESSION['error']; ?></i></div>
                     <input class="form" type="text" name="username" placeholder="username" required><br>
                     <input class="form" type="password" name="password" placeholder="password" required><br>
-                    <input id="loginButton" class="btn btn-primary" type="submit" value="Login">
-                    <input id="createButton" class="btn btn-basic" value="Create Account" onclick="create()">
+                    <input id="loginButton" class="btn" type="submit" value="Sign In">
+                    <button id="createButton" class="btn"  onclick="window.location.href='create.php'">Create Account</button>
                 </form>
                 </div>
-                <script>
-                    function create(){
-                        window.location = 'create.php';
-                    }
-                </script>
                 <footer>
-                    <p>Created by Cynthia Carter, Evan Sauers, and Josh Schoonmaker.</p>
+                    <p>Created by Cynthia Carter, Evan Sauers, and Joshua Schoonmaker.</p>
                 </footer>
                 
             </div>
