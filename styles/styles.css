@@ -4,14 +4,16 @@ body {
     background-repeat: no-repeat;
     background-color: rgba(229, 0, 45, 0.45) !important;
     background-blend-mode: multiply;
+    background-attachment: fixed;
 }
 
 h1 {
     font-size: 80px !important;
 }
 
+
 #logo {
-    width: 65px;
+    width: 60px;
 }
 
 ol li {
@@ -25,7 +27,7 @@ ol li {
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 3px 8px 22px #888888;
+    box-shadow: 8px 8px 20px #1a1a1a;
     float: right;
 }
 
@@ -72,13 +74,12 @@ ol li {
     margin: 40px 40px 40px 40px;
     padding: 30px 30px 80px 30px !important;
     background-color: #FFFFFF;
-    box-shadow: 3px 8px 22px #888888;
+    box-shadow: 3px 8px 22px #1a1a1a;
 }
 
 
 .welcome {
     padding: 100px 40px 20px 40px !important;
-    
 }
 
 
@@ -107,5 +108,9 @@ ol li {
         width: 225px;
         height: 225px;
         margin-bottom: 40px;
+    }
+    
+    #logo {
+        width: 45px;
     }
 }

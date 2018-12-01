@@ -2,6 +2,9 @@ body {
     background-color: #333333;
     background-image: -webkit-radial-gradient(#333333, #262626, #1a1a1a);
     -webkit-background-size: auto;
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
 }
 
 h1 {
@@ -11,7 +14,7 @@ h1 {
 
 #login {
     padding: 100px 0px 100px 0px;
-    margin: 60px 450px 20px 450px;
+    margin: 20px 450px 20px 450px;
     text-align: center;
     color: #FFFFFF;
 }
@@ -59,7 +62,7 @@ h1 {
 
 footer {
     color: white;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font-size: 12px;

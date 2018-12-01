@@ -4,7 +4,7 @@
 $server='127.0.0.1';
 $username='root';
 $password='';
-$database='';
+$database='pet_forum';
 
 // Create connection to MySQLWorkbench
 $conn = new mysqli($server, $username, $password, $database);

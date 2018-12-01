@@ -1,5 +1,5 @@
 <?php
-    //include('session.php');
+    include('session.php');
 
     
     
@@ -26,7 +26,7 @@
     <body>        
         <!-- Navigation Bar -->
         <nav class="navbar bg-dark navbar-dark">
-            <a class="navbar-brand" href="#"><h2><img src="images/iwu-logo.gif" id="logo"> Roommate Finder</h2></a>
+            <a class="navbar-brand" href="dashboard.php"><h2><img src="images/iwu-logo.gif" id="logo"> Roommate Finder</h2></a>
 
             <!-- Toggle "Hamburger" Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -40,10 +40,10 @@
                         <a class="nav-link" href="#">My Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Insert Link</a>
+                        <a class="nav-link" href="#">Settings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </li> 
                 </ul>
             </div> 
@@ -69,7 +69,7 @@
                             <div class="col-lg-6">
                                 <div class="welcome">  
                                     <h1>Welcome</h1>
-                                    <!--<h4><?php echo $session; ?></h4>-->
+                                    <h2><?php echo $session; ?></h2>
                                 </div>
                             </div>
                             <div class="col-lg-6">
