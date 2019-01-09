@@ -1,71 +1,49 @@
 body {
-    background-color: #333333;
-    background-image: -webkit-radial-gradient(#333333, #262626, #1a1a1a);
-    -webkit-background-size: auto;
-    margin: 0; 
-    height: 100%; 
-    overflow: hidden;
+    background-color: whitesmoke;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 h1 {
     font-family: 'ABeeZee', sans-serif;
     font-size: 48px;
-}
-
-#login {
-    padding: 100px 0px 100px 0px;
-    margin: 20px 450px 20px 450px;
+    color: darkgray;
     text-align: center;
-    color: #FFFFFF;
-}
-
-#username {
-    display: inline;
-}
-
-#check {
-    display: inline;
-    float: right;
-}
-
-.form {
-    padding: 12px 0px 12px 10px;
-    margin-top: 8px;
-    width: 350px;
 }
 
 .logo {
-    width: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 150px;
 }
 
-#loginButton {
-    margin-top: 20px;
-    width: 300px;
-    padding: 10px 0px 10px 0px;
-    background-color: rgba(200, 0, 45);
-    color: white;
+#taglinTxt {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    text-transform:uppercase;
+    margin-top: -20px;
 }
 
-#loginButton:hover {
-    background-color: rgba(165, 0, 30);
-}
+#loader {
+    font-family: 'ABeeZee', sans-serif;
+    color: black;
+    font-size: 35px;
+    text-align: center;
 
-#createButton {
-    margin-top: 10px;
-    width: 300px;
-    padding: 10px 0px 10px 0px;
 }
-
-#createButton:hover {
-    background-color: rgba(225, 225, 225);
-}
-
 footer {
+    font-family: 'ABeeZee', sans-serif;
     color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     text-transform: uppercase;
 }
