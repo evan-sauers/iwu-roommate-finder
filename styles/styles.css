@@ -1,0 +1,78 @@
+body {
+    
+}
+
+h1 {
+    font-size: 80px !important;
+}
+
+#logo {
+    height: 35px;
+    
+}
+
+.title {
+    font-family: 'Lato', sans-serif;
+}
+
+.nav-link {
+    
+}
+
+ol li {
+    padding-top: 50px;
+}
+
+#logout {
+
+}
+
+#surveyButton {
+    background-color: #d21437;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 5px 5px 40px;
+    width: 300px;
+}
+
+#surveyButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#surveyButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#surveyButton:hover span {
+    padding-right: 25px;
+}
+
+#surveyButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.content {
+    margin: 40px 40px 40px 40px;
+    padding: 30px 30px 80px 30px !important;
+    background-color: #FFFFFF;
+}
+
+
+.welcome {
+    padding: 100px 40px 20px 40px !important;
+}

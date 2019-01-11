@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="styles/styles.css">
         <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100|Roboto+Slab:300" rel="stylesheet">
         
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -22,29 +23,27 @@
 
     <body>        
         <!-- Navigation Bar -->
-        <nav class="navbar bg-dark navbar-dark">
-            <a class="navbar-brand" href="dashboard.php"><h2><img src="images/iwu-logo.gif" id="logo"> Roommate Finder</h2></a>
-
-            <!-- Toggle "Hamburger" Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><h2 class="title">IWU Roommate Finder</h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navigation Bar links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">My Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
                     </li>
-                    <li class="nav-item">
-                        <button onclick="mainApp.logOut()">Logout</button>
-                    </li> 
                 </ul>
-            </div> 
+                <button id="logout" onclick="mainApp.logOut()">Logout</button>
+            </div>
         </nav>
+        
 
         <div class="container-fluid">
             <div class="row">
@@ -66,11 +65,10 @@
                             <div class="col-lg-6">
                                 <div class="welcome">  
                                     <h1>Welcome</h1>
-                                    <h2><?php echo $session; ?></h2>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <img id="profile" src="images/cynthia.jpg" alt="Profile Image">
+
                             </div>
                         </div>
                         <div class="row">
