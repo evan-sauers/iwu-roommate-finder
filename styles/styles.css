@@ -1,5 +1,5 @@
 body {
-    
+    background-color: whitesmoke !important;
 }
 
 h1 {
@@ -67,12 +67,33 @@ ol li {
 }
 
 .content {
-    margin: 40px 40px 40px 40px;
-    padding: 30px 30px 80px 30px !important;
+    margin: 40px 40px 0px 40px;
+    padding: 30px 30px 30px 30px !important;
+    background-color: #FFFFFF;
+    width: 425px;
+}
+
+.welcomeContent {
+    margin: 40px 40px 0px 40px;
+    padding: 30px 30px 120px 30px !important;
     background-color: #FFFFFF;
 }
 
+.takeSurvey {
+    margin-top: 125px;
+}
 
 .welcome {
     padding: 100px 40px 20px 40px !important;
+}
+
+.box {
+    margin: 30px 0px 0px 40px;
+    width: 425px;
+    padding: 20px 80px 20px 30px !important;
+    background-color: #FFFFFF;
+}
+
+#housing {
+    margin-left: 35%;
 }
