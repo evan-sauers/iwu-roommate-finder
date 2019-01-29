@@ -186,7 +186,7 @@ input.firebaseui-input-invalid{
 }
 
 .firebaseui-textfield.mdl-textfield .firebaseui-label::after {
-  background-color: #3f51b5;
+  background-color: #d21437;
 }
 
 .firebaseui-textfield-invalid.mdl-textfield .firebaseui-input {
@@ -342,14 +342,14 @@ input.firebaseui-input-invalid{
 .firebaseui-idp-phone:hover,
 .mdl-button.firebaseui-idp-phone:active,
 .mdl-button.firebaseui-idp-phone:focus {
-  background-color: #02bd7e;
+  background-color: #d21437;
 }
 
 .firebaseui-idp-google,
 .firebaseui-idp-google:hover,
 .mdl-button.firebaseui-idp-google:active,
 .mdl-button.firebaseui-idp-google:focus {
-  background-color: #ffffff;
+  background-color: #d21437;
 }
 
 .firebaseui-idp-google > .firebaseui-idp-text {
@@ -367,7 +367,7 @@ input.firebaseui-input-invalid{
 .firebaseui-idp-facebook:hover,
 .mdl-button.firebaseui-idp-facebook:active,
 .mdl-button.firebaseui-idp-facebook:focus {
-  background-color: #3b5998;
+  background-color: #d21437;
 }
 
 .firebaseui-idp-twitter,

@@ -34,13 +34,13 @@
                         <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="profile.html">My Profile<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
                     </li>
                 </ul>
-                <button id="logout" onclick="mainApp.logOut()">Logout</button>
+                <button id="logout" onclick="mainApp.logOut()">Sign Out</button>
             </div>
         </nav>
         
@@ -50,17 +50,119 @@
                 <!-- Process Section -->
                 <div class="col-lg-4">
                     <div class="content">
-                        <p>[INSERT PROFILE PICTURE HERE]</p>
+                        <p>[INSERT  UPLOAD PROFILE PICTURE HERE]</p>
                     </div>
                 </div>
-                <!-- Welcome Section -->
+                <!-- Profile Section -->
                 <div class="col-lg-8">
-                    <div class="content">
-                        <div class="row">
-                            <h1>[INSERT NAME HERE]</h1>
-                            <h4>Graduation Year: </h4>
-                            <h4>Hometown: </h4>&nbsp;<br>
-                            <h4>Bio: </h4>
+                    <div class="profBefore">
+                        <div class="content">
+                            <form class="form-horizontal" action="">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <label for="first">Full Name:</label>
+                                                <input type="text" class="form-control" id="first" placeholder="First Name">
+                                            </div>
+                                            <div class="form-group col-md-7">
+                                                <label for="last">Last Name</label>
+                                                <input type="text" class="form-control" id="last" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <label for="list">Graduation Year:</label>
+                                        <select class="form-control" id="list">
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <label for="city">City</label>
+                                              <input type="text" class="form-control" id="city">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                              <label for="inputState">State</label>
+                                              <select id="inputState" class="form-control">
+                                                <option selected>Select A State</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AK">Alaska</option>
+                                                <option value="AZ">Arizona</option>
+                                                <option value="AR">Arkansas</option>
+                                                <option value="CA">California</option>
+                                                <option value="CO">Colorado</option>
+                                                <option value="CT">Connecticut</option>
+                                                <option value="DE">Delaware</option>
+                                                <option value="DC">District Of Columbia</option>
+                                                <option value="FL">Florida</option>
+                                                <option value="GA">Georgia</option>
+                                                <option value="HI">Hawaii</option>
+                                                <option value="ID">Idaho</option>
+                                                <option value="IL">Illinois</option>
+                                                <option value="IN">Indiana</option>
+                                                <option value="IA">Iowa</option>
+                                                <option value="KS">Kansas</option>
+                                                <option value="KY">Kentucky</option>
+                                                <option value="LA">Louisiana</option>
+                                                <option value="ME">Maine</option>
+                                                <option value="MD">Maryland</option>
+                                                <option value="MA">Massachusetts</option>
+                                                <option value="MI">Michigan</option>
+                                                <option value="MN">Minnesota</option>
+                                                <option value="MS">Mississippi</option>
+                                                <option value="MO">Missouri</option>
+                                                <option value="MT">Montana</option>
+                                                <option value="NE">Nebraska</option>
+                                                <option value="NV">Nevada</option>
+                                                <option value="NH">New Hampshire</option>
+                                                <option value="NJ">New Jersey</option>
+                                                <option value="NM">New Mexico</option>
+                                                <option value="NY">New York</option>
+                                                <option value="NC">North Carolina</option>
+                                                <option value="ND">North Dakota</option>
+                                                <option value="OH">Ohio</option>
+                                                <option value="OK">Oklahoma</option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="RI">Rhode Island</option>
+                                                <option value="SC">South Carolina</option>
+                                                <option value="SD">South Dakota</option>
+                                                <option value="TN">Tennessee</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="UT">Utah</option>
+                                                <option value="VT">Vermont</option>
+                                                <option value="VA">Virginia</option>
+                                                <option value="WA">Washington</option>
+                                                <option value="WV">West Virginia</option>
+                                                <option value="WI">Wisconsin</option>
+                                                <option value="WY">Wyoming</option>
+                                                <option value="other">Other</option>
+                                              </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group"> 
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <label for="comment">Bio:</label>
+                                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group"> 
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                      <button type="submit" class="subButton">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -34,13 +34,13 @@
                         <a class="nav-link" href="dashboard.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">My Profile</a>
+                        <a class="nav-link" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
                     </li>
                 </ul>
-                <button id="logout" onclick="mainApp.logOut()">Logout</button>
+                <button id="logout" onclick="mainApp.logOut()">Sign Out</button>
             </div>
         </nav>
         
@@ -50,11 +50,11 @@
                 <!-- Process Section -->
                 <div class="col-lg-4">
                     <div class="content">
-                        <h2><u>Your Process</u></h2>
+                        <h2 id="process">Your Process</h2>
                         <ol>
-                            <h3><li>Take The Survey</li>
-                            <li>Find A Roommate</li>
-                            <li>Choose Your Housing</li></h3>
+                            <h4><li>Create a Profile</li>
+                            <li>Take the Survey</li>
+                            <li>Find a Match</li></h4>
                         </ol>
                     </div>
                     <div class="row">
@@ -76,7 +76,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <button id="surveyButton" type="submit"><span>Take the Survey</span></button>
+                                    <button onclick="window.location.href = 'survey.html';" id="surveyButton" type="submit"><span>Take the Survey</span></button>
                                 </div>
                             </div>
                         </div>

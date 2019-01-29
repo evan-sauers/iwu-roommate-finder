@@ -11,6 +11,10 @@ h1 {
     
 }
 
+.profBefore {
+    margin-top: 40px;
+}
+
 .title {
     font-family: 'Lato', sans-serif;
 }
@@ -19,6 +23,36 @@ h1 {
     
 }
 
+.subButton {
+    background-color: #d21437;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 150px;
+    float: right;
+}
+
+.subButton:hover {
+    background-color: #a50d29;
+}
+
 ol li {
     padding-top: 50px;
+}
+
+#logout {
+    background-color: #d21437;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 100px;
 }
