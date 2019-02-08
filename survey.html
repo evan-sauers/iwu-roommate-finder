@@ -34,52 +34,22 @@
                         <a class="nav-link" href="dashboard.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Profile</a>
+                        <a class="nav-link" href="profile.html">My Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
                     </li>
                 </ul>
-                <button id="logout" onclick="mainApp.logOut()">Sign Out</button>
+                <button id="logout" onclick="mainApp.logOut()">Logout</button>
             </div>
         </nav>
-        
-
         <div class="container-fluid">
             <div class="row">
-                <!-- Process Section -->
-                <div class="col-lg-4">
-                    <div class="content">
-                        <h2 id="process">Your Process</h2>
-                        <ol>
-                            <h4><li>Create a Profile</li>
-                            <li>Take the Survey</li>
-                            <li>Find a Match</li></h4>
-                        </ol>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="box">
-                                <a href="https://housing.indwes.edu"><img id="housing" src="images/housing_logo.jpg"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Welcome Section -->
-                <div class="col-lg-8">
-                    <div class="welcomeContent">
-                        <div class="takeSurvey">
-                            <div class="row">
-                                    <div class="welcome">  
-                                        <h1>Welcome</h1>
-                                    </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <button onclick="window.location.href = 'survey.html';" id="surveyButton" type="submit"><span>Take the Survey</span></button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="survey">
+                        <h1>IWU Roommate Finder</h1>
+                        <p>Please fill out the questionnaire completely below.</p>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9mxXo_viQAMhBdmzjrD-bs3QMBaXCe6qeKkEMOGRuRxk1OQ/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
                     </div>
                 </div>
             </div>
