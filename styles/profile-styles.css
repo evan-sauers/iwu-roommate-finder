@@ -19,6 +19,20 @@ h1 {
     font-family: 'Lato', sans-serif;
 }
 
+li {
+    font-family: 'Lato', sans-serif;
+}
+
+#process {
+    font-size: 40px !important;
+}
+
+ol li {
+    font-family: 'Lato', sans-serif;
+    padding-top: 50px;
+    font-size: 32px;
+}
+
 .nav-link {
     
 }

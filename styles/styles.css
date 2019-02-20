@@ -6,6 +6,11 @@ h1 {
     font-size: 80px !important;
 }
 
+
+li {
+    font-family: 'Lato', sans-serif;
+}
+
 #process {
     font-size: 40px !important;
 }
@@ -19,12 +24,10 @@ h1 {
     font-family: 'Lato', sans-serif;
 }
 
-.nav-link {
-    
-}
-
 ol li {
+    font-family: 'Lato', sans-serif;
     padding-top: 50px;
+    font-size: 32px;
 }
 
 #logout {
@@ -47,10 +50,10 @@ textarea {
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px 5px 5px 40px;
+    margin: 150px 5px 5px 40px;
     width: 300px;
 }
 
@@ -79,6 +82,45 @@ textarea {
     right: 0;
 }
 
+#matchButton {
+    background-color: #908D8E;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 10px 20px 10px 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px 5px 5px 40px;
+    width: 300px;
+}
+
+#matchButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#matchButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#matchButton:hover span {
+    padding-right: 25px;
+}
+
+#matchButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
 .content {
     margin: 40px 40px 0px 40px;
     padding: 30px 30px 30px 30px !important;
@@ -87,17 +129,27 @@ textarea {
 }
 
 .welcomeContent {
-    margin: 40px 40px 0px 40px !important; 
-    padding: 30px 30px 120px 30px !important;
+    margin: 0px 40px 0px 40px !important; 
+    padding: 0px 40px 50px 30px !important;
+    height: 625px;
     background-color: #FFFFFF;
+    background-image: url("../images/wesley.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right;
 }
 
 .takeSurvey {
-    margin-top: 125px;
+    margin-top: 40px;
+    padding-top: 30px;
 }
 
 .welcome {
-    padding: 100px 40px 20px 40px !important;
+    padding: 0px 40px 20px 40px !important;
+}
+
+#purpose {
+    margin-right: 375px;
 }
 
 .box {
