@@ -22,10 +22,10 @@ class Response // Simulates the database positions where responses are stored
   string questionText = "uninitialized";
   vector<string> responses;
   
-  // Member functions for the Response class
   // Default constructor for Response class
   Response(int questionNumber)
   {
+    cout << "Step #1" << endl; // Execution Test #1
     switch(questionNumber)
     {
       case 0 :
@@ -225,13 +225,23 @@ class Response // Simulates the database positions where responses are stored
       break;
     }
     
+    cout << "Step #2" << endl; // Execution Test #2
     generateRandomResponse();
     
+    cout << "Step #3" << endl; // Execution Test #3
     /*for (int i = 0; i < responses.size(); i++)
     {
       cout << responses[i] << endl;
     }*/
+    
+  // Member functions for the Response class
   }
+  
+  string getResponse(int questionNumber)
+  {
+    return responses[questionNumber + 1];
+  }
+  
   
   void generateRandomResponse() // Eliminates all but 1 response option based on RNG
   {
@@ -239,6 +249,8 @@ class Response // Simulates the database positions where responses are stored
     string chosenResponse = responses[randomResponse];
     
     responses.assign(1, chosenResponse);
+    
+    cout << "Random response checks out" << endl;
   }
 };
 
@@ -252,12 +264,13 @@ class Survey // Simulates the surveys being submitted by students.  Made up of 2
   
   Survey()
   {
-    cout << "Populate with random responses?" << endl;
+    cout << "Populate survey with random responses? (y/n)" << endl;
     cin >> isRandom;
     
     if (isRandom == "Y" || isRandom == "y")
     {
       setRandomResponses();
+      cout << "Step #5" << endl; // Execution Test #5
     }
     else
     {
@@ -266,16 +279,26 @@ class Survey // Simulates the surveys being submitted by students.  Made up of 2
   }
   
   // Member functions for the Survey class
+  string getResponse(int questionNumber) // Getting the result from a specific survey answer
+    {
+      return responseList[questionNumber + 1].getResponse(questionNumber);
+    }
+    
   void setRandomResponses() // Populates the Survey with Response objects
   {
+    cout << "Initializing function setRandomResponses()" << endl;
     for(int currentResponse = 0; currentResponse < numberOfResponses; currentResponse++)
     {
+      cout << "------ Response #" << (currentResponse + 1) << ": ------" << endl;
+      
+      
       //Response function call for filling a single response with random answers
       responseList[currentResponse] = Response(currentResponse);
+      cout << "Step #4" << endl; // Execution Test #4
     }
   }
   
-  void setRandomResponse() // Changes a specific response to a random answer
+  void setSpecificResponse() // Changes a specific response to a random answer
   {
     for(int currentResponse = 0; currentResponse < numberOfResponses; currentResponse++)
     {
@@ -284,6 +307,7 @@ class Survey // Simulates the surveys being submitted by students.  Made up of 2
   }
 };
 
+
 class User
 {
   public:
@@ -291,13 +315,23 @@ class User
   int finalScore = 0, category1 = 0, category2 = 0, category3 = 0, category4 = 0, category5 = 0; // Creating response categories to track categories
   string gender = "unspecified", sport1 = "unspecified", sport2 = "unspecified"; // Member variables for splitting users into different candidate pools, based on gender and sports respectively
   Survey  testSurvey; // Survey object associated with each user based on their responses
+  vector<User> roommatePool; // Pool object for storing the relevant roommate results (vector)
   
   // Member functions for the User class
   User()
   {
+    initializePool();
+  }
+  
+    void initializePool()
+  {
+    cout << "What is your gender? (Male/Female/Other)";
+    cin >> gender;
+    
     
   }
 };
+
 
 /*void initializeResponses(User currentRecord)
 {
