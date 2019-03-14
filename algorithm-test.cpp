@@ -13,7 +13,11 @@
 
 using namespace std;
 
+
+/* Global Constant Variable Declarations */
+
 const int maxCategoryScore = 10; // Size of the answer vector and maximum response score
+
 
 /* Class Initializations */
 
@@ -321,12 +325,12 @@ class User
   // Member functions for the User class
   User()
   {
-    initializePool();
+    
   }
   
     void initializePool()
   {
-    cout << "User sex: ";
+    cout << "User " << userID << " sex: ";
     cin >> gender;
   }
   
@@ -392,7 +396,7 @@ class User
   
   void listPotentialRoommates()
   {
-    cout << "Current potential roommates for user " << userID <<" (" << possibleRoommates.size() << " options) : ";
+    cout << "Current potential roommates for User " << userID <<" (" << possibleRoommates.size() << " options) : ";
     
     //Loop for listing off each roommate currently listed as a potential - unsorted
     for(int i = 0; i < possibleRoommates.size(); i++)
@@ -403,6 +407,7 @@ class User
     cout << endl;
   }
 };
+
 
 /* Function Initializations */
 
@@ -438,6 +443,11 @@ int main()
   testUser3.setID(3);
   testUser4.setID(4);
   
+  testUser1.initializePool();
+  testUser2.initializePool();
+  testUser3.initializePool();
+  testUser4.initializePool();
+  
   testUser1.setCategories();
   testUser2.setCategories();
   testUser3.setCategories();
@@ -448,19 +458,24 @@ int main()
   // User category scores set.  Listing scores for verification.
   
   cout << "----- User 1 Scores ------" << endl;
+  cout << "User 1 sex: " << testUser1.gender << endl;
   testUser1.listCategories();
   cout << "----- User 2 Scores ------" << endl;
+  cout << "User 2 sex: " << testUser2.gender << endl;
   testUser2.listCategories();
   cout << "----- User 3 Scores ------" << endl;
+  cout << "User 3 sex: " << testUser3.gender << endl;
   testUser3.listCategories();
   cout << "----- User 4 Scores ------" << endl;
+  cout << "User 4 sex: " << testUser4.gender << endl;
   testUser4.listCategories();
   
   // Sort user into appropriate pool based on gender and sports team 
-  cout << "Testing users 1 and 2 for compatible genders." << endl;
+  cout << "Testing User 1 for compatible genders." << endl;
   //Performing a gender comparison
   compareGenders(testUser1, testUser2);
   compareGenders(testUser1, testUser3);
+  compareGenders(testUser1, testUser4);
   //Verifying if the user was indeed entered into the potential roommate pool
   testUser1.listPotentialRoommates();
   
