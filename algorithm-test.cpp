@@ -15,6 +15,8 @@ using namespace std;
 
 const int maxCategoryScore = 10; // Size of the answer vector and maximum response score
 
+/* Class Initializations */
+
 class Response // Simulates the database positions where responses are stored
 {
   public:
@@ -307,15 +309,14 @@ class Survey // Simulates the surveys being submitted by students.  Made up of 2
   }
 };
 
-
 class User
 {
   public:
   // Member variables for the User class
-  int finalScore = 0, category1 = 0, category2 = 0, category3 = 0, category4 = 0, category5 = 0; // Creating response categories to track categories
+  int finalScore = 0, category1 = 0, category2 = 0, category3 = 0, category4 = 0, category5 = 0, userID = 0; // Creating response categories to track categories
   string gender = "unspecified", sport1 = "unspecified", sport2 = "unspecified"; // Member variables for splitting users into different candidate pools, based on gender and sports respectively
-  Survey  testSurvey; // Survey object associated with each user based on their responses
-  vector<User> roommatePool; // Pool object for storing the relevant roommate results (vector)
+  // Survey  testSurvey; // Survey object associated with each user based on their responses
+  vector<User> roommatePool, possibleRoommates; // Pool object for storing the relevant roommate results (vector)
   
   // Member functions for the User class
   User()
@@ -325,13 +326,85 @@ class User
   
     void initializePool()
   {
-    cout << "What is your gender? (Male/Female/Other)";
+    cout << "User sex: ";
     cin >> gender;
+  }
+  
+  void setID(int IDNumber)
+  {
+    userID = IDNumber;
+  }
+  
+  void setCategories()
+  {
+      switch(userID)
+      {
+        case 1 :
+        category1 = 1;
+        category2 = 2;
+        category3 = 3;
+        category4 = 4;
+        category5 = 5;
+        break;
+        case 2 :
+        category1 = 3;
+        category2 = 4;
+        category3 = 3;
+        category4 = 5;
+        category5 = 1;
+        break;
+        case 3 :
+        category1 = 3;
+        category2 = 5;
+        category3 = 5;
+        category4 = 1;
+        category5 = 1;
+        break;
+        case 4 :
+        category1 = 3;
+        category2 = 1;
+        category3 = 2;
+        category4 = 5;
+        category5 = 5;
+        break;
+      }
+  }
+  
+  void addPotentialRoommate(User potentialRoommate)
+  {
+    possibleRoommates.push_back(potentialRoommate);
+  }
+  
+  int getID()
+  {
+    return userID;
+  }
+  
+  string getGender()
+  {
+    return gender;
+  }
+  
+  void listCategories()
+  {
+    cout << "Category A = " << category1 << ",  Category B = " << category2 << ",  Category C = " << category3 << ",  Category D = " << category4 << ",  Category E = " << category5 << endl << endl;
+  }
+  
+  void listPotentialRoommates()
+  {
+    cout << "Current potential roommates for user " << userID <<" (" << possibleRoommates.size() << " options) : ";
     
+    //Loop for listing off each roommate currently listed as a potential - unsorted
+    for(int i = 0; i < possibleRoommates.size(); i++)
+    {
+      cout << possibleRoommates[i].getID() << ", ";
+    }
     
+    cout << endl;
   }
 };
 
+/* Function Initializations */
 
 /*void initializeResponses(User currentRecord)
 {
@@ -341,18 +414,64 @@ class User
   }
 } */
 
+void compareGenders (User &comparingUser, User comparedUser)
+{
+  // Are the two users the same gender?
+  if(comparingUser.getGender() == comparedUser.getGender())
+  {
+    // Add the comparedUser to the possible roommates vector of the comparing user
+    comparingUser.addPotentialRoommate(comparedUser);
+  }
+  else
+  {
+    return;
+  }
+}
+
+
 int main()
 {
-  User testUser; // Creates a test user (uninitialized)
+  User testUser1, testUser2, testUser3, testUser4; // Creates a test user (uninitialized)
+  
+  testUser1.setID(1);
+  testUser2.setID(2);
+  testUser3.setID(3);
+  testUser4.setID(4);
+  
+  testUser1.setCategories();
+  testUser2.setCategories();
+  testUser3.setCategories();
+  testUser4.setCategories();
+  
+  cout << endl << "Test category scores set." << endl << endl;
+  
+  // User category scores set.  Listing scores for verification.
+  
+  cout << "----- User 1 Scores ------" << endl;
+  testUser1.listCategories();
+  cout << "----- User 2 Scores ------" << endl;
+  testUser2.listCategories();
+  cout << "----- User 3 Scores ------" << endl;
+  testUser3.listCategories();
+  cout << "----- User 4 Scores ------" << endl;
+  testUser4.listCategories();
   
   // Sort user into appropriate pool based on gender and sports team 
+  cout << "Testing users 1 and 2 for compatible genders." << endl;
+  //Performing a gender comparison
+  compareGenders(testUser1, testUser2);
+  compareGenders(testUser1, testUser3);
+  //Verifying if the user was indeed entered into the potential roommate pool
+  testUser1.listPotentialRoommates();
   
   // Check each of the user's survey results
   
+  
     // Increment the appropriate category's total depending on responses present
     
-  // Once the categories have been totalled up, compare 
+  // Once the categories have been totalled up, compare
   
-  
+
+
   return EXIT_SUCCESS;
 }
