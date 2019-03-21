@@ -15,6 +15,10 @@ h1 {
     margin-top: 40px;
 }
 
+#little {
+    font-size: 12px;
+}
+
 .title {
     font-family: 'Lato', sans-serif;
 }
@@ -22,6 +26,16 @@ h1 {
 li {
     font-family: 'Lato', sans-serif;
 }
+
+#fileSubmit {
+    margin-top: 200px;
+    
+}
+
+.file-select {
+    margin-left: 25%;
+}
+
 
 #process {
     font-size: 40px !important;
@@ -31,10 +45,6 @@ ol li {
     font-family: 'Lato', sans-serif;
     padding-top: 50px;
     font-size: 32px;
-}
-
-.nav-link {
-    
 }
 
 .subButton {
@@ -49,9 +59,24 @@ ol li {
     cursor: pointer;
     width: 150px;
     float: right;
+    margin-bottom: 20px;
 }
 
-.subButton:hover {
+.file-submit {
+    background-color: #d21437;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: 40%;
+}
+
+.file-submit:hover, .subButton:hover {
     background-color: #a50d29;
 }
 

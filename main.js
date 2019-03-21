@@ -1,5 +1,5 @@
 var mainApp ={};
-
+var userState;
 (function(){
     var firebase = app_Firebase;
    
@@ -8,6 +8,8 @@ var mainApp ={};
         if (user) {
           // User is signed in.
             uid = user.uid;
+            userState = user.email.replace(/[^a-zA-Z ]/g, "");
+
         } else {
         //Redirect to main page
         uid = null;

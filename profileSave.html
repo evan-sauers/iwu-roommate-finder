@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>IWU Roommate Finder</title>
-        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/profile-styles.css">
         <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Lato:100|Roboto+Slab:300" rel="stylesheet">
-        
+                
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         
@@ -18,6 +18,7 @@
 
         <!-- Firebase-->
         <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+        
     </head>
 
     <body>        
@@ -29,11 +30,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html" onclick="profile()">Profile</a>
+                        <a class="nav-link" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
@@ -49,48 +50,55 @@
                 <!-- Process Section -->
                 <div class="col-lg-4">
                     <div class="content">
-                        <h2 id="process">Your Process</h2>
-                        <ol>
-                            <li>Create a Profile</li>
-                            <li>Take the Survey</li>
-                            <li>Find a Match</li>
-                        </ol>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="box">
-                                <a href="https://housing.indwes.edu"><img id="housing" src="images/housing_logo.jpg" alt="Housing Department Logo"></a>
-                            </div>
+                        <div id="fileSubmit">
+                          <p>IMAGE HERE</p>
                         </div>
                     </div>
                 </div>
-                <!-- Welcome Section -->
+                <!-- Profile Section -->
                 <div class="col-lg-8">
-                    <div class="welcomeContent">
-                        <div class="takeSurvey">
-                            <div class="row">
-                                <div class="welcome">  
-                                    <h1>Welcome</h1>
-                                    <p id="purpose">The purpose of the IWU Roommate Finder is to promote better living conditions while on campus. After taking the survey, your results will be matched with those similar to yours, and will allow you to contact that person.</p>
+                    <div class="profBefore">
+                        <div class="content">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <h3 id="first"></h3>
+                                                <h3 id="last"></h3>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <button onclick="window.location.href = 'survey.html';" id="surveyButton" type="submit"><span>Take the Survey</span></button>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <h5 id="year"></h5>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <button onclick="window.location.href = 'match.html';" id="matchButton" type="submit"><span>View Matches</span></button>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <h6 id="home"><h6 id="state"></h6></h6>
+                                            </div> 
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="form-group"> 
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <p id="bio"></p>
+                                        <p id="extra">userState: </p>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
         <script src="firebase.js"></script>
         <script src="main.js"></script>
+        <script src="writedata.js"></script>
+        <script src="readData.js"></script>
     </body>
 </html>
