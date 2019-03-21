@@ -10,6 +10,7 @@ function submitBtn() {
     var city = $("#city").val();
     var inputState = $("#inputState").val();
     var comment = $("#comment").val();
+    var email = $("#email").val();
         
     ref.push({
         "first" : first,
@@ -17,6 +18,7 @@ function submitBtn() {
         "list" : list,
         "city" : city,
         "inputState" : inputState,
-        "comment" : comment
+        "comment" : comment,
+        "email" : email
     });
 }
