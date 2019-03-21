@@ -51,11 +51,13 @@
                 <div class="col-lg-4">
                     <div class="content">
                         <div id="filesubmit">
-                          <input type="file" class="file-select" accept="image/*"/>
-                          <button class="file-submit">SUBMIT</button>
+                          <input type="file" name="file_name" id="image-upload" class="file-select" accept="image/*"/>
+                          <button class="imageSumbit" onclick="fileSubmitBtn()" id="file-path"">SUBMIT</button>
                         </div>
+                        <div id="display-img"></div>
                     </div>
                 </div>
+
                 <!-- Profile Section -->
                 <div class="col-lg-8">
                     <div class="profBefore">
@@ -173,6 +175,7 @@
         </div>
         <script src="firebase.js"></script>
         <script src="main.js"></script>
+        <script src="imageupload.js"></script>
         <script src="writedata.js"></script>
     </body>
 </html>
