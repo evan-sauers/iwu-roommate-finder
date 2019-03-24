@@ -2,7 +2,8 @@
 var database = firebase.database();
 
 function submitBtn() {  
-    var ref = database.ref('users');
+    var ref = database.ref('users/' + userState);
+    var user = firebase.auth().currentUser;
     
     var first = $("#first").val();
     var last = $("#last").val();
@@ -11,14 +12,19 @@ function submitBtn() {
     var inputState = $("#inputState").val();
     var comment = $("#comment").val();
     var email = $("#email").val();
+    
+    
+    var userID = user.email.replace(/[^a-zA-Z ]/g, "");
         
-    ref.push({
+    
+    ref.set({
         "first" : first,
         "last" : last,
         "list" : list,
         "city" : city,
         "inputState" : inputState,
         "comment" : comment,
-        "email" : email
+        "email" : email,
+        "userID" : userID
     });
 }
