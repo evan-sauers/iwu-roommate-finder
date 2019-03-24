@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include <random>
 
 using namespace std;
@@ -317,10 +318,12 @@ class User
 {
   public:
   // Member variables for the User class
-  int finalScore = 0, category1 = 0, category2 = 0, category3 = 0, category4 = 0, category5 = 0, userID = 0; // Creating response categories to track categories
+  float finalScore = 0, category1 = 0, category2 = 0, category3 = 0, category4 = 0, category5 = 0;
+  int userID = 0; // Creating response categories to track categories
   string gender = "unspecified", sport1 = "unspecified", sport2 = "unspecified"; // Member variables for splitting users into different candidate pools, based on gender and sports respectively
   // Survey  testSurvey; // Survey object associated with each user based on their responses
-  vector<User> roommatePool, possibleRoommates; // Pool object for storing the relevant roommate results (vector)
+  vector<User> roommatePool, possibleRoommates; // Vectors for storing the relevant roommate results
+  vector<float> roommateCorrelations; // Vector for storing the correlation percentages of each roommate.  Parallel with roommatePool
   
   // Member functions for the User class
   User()
@@ -389,6 +392,11 @@ class User
     return gender;
   }
   
+  float getCorrelation(int currentLocation)
+  {
+    return roommateCorrelations[currentLocation];
+  }
+  
   void listCategories()
   {
     cout << "Category A = " << category1 << ",  Category B = " << category2 << ",  Category C = " << category3 << ",  Category D = " << category4 << ",  Category E = " << category5 << endl << endl;
@@ -406,7 +414,33 @@ class User
     
     cout << endl;
   }
-};
+  
+  void listCorrelatedRoommates()
+  {
+    cout << "Current potential roommates and correlations for User " << userID <<" (" << possibleRoommates.size() << " options) : ";
+    
+    //Loop for listing off each roommate currently listed as a potential - unsorted
+    for(int i = 0; i < possibleRoommates.size(); i++)
+    {
+      cout << possibleRoommates[i].getID() << " (" << roommateCorrelations[i] << "), ";
+    }
+    
+    cout << endl;
+  }
+  
+  void listRoommates()
+  {
+    cout << "Current sorted roommates for User " << userID <<" (" << roommatePool.size() << " options) : ";
+    
+    //Loop for listing off each roommate currently listed as a potential - unsorted
+    for(int i = 0; i < roommatePool.size(); i++)
+    {
+      cout << roommatePool[i].getID() << " (" << static_cast<int>(roommatePool[i].finalScore * 100) <<"%), ";
+    }
+    
+    cout << endl;
+  }
+};  // End of User Class
 
 
 /* Function Initializations */
@@ -419,7 +453,7 @@ class User
   }
 } */
 
-void compareGenders (User &comparingUser, User comparedUser)
+void compareGenders (User &comparingUser, User &comparedUser)
 {
   // Are the two users the same gender?
   if(comparingUser.getGender() == comparedUser.getGender())
@@ -434,20 +468,168 @@ void compareGenders (User &comparingUser, User comparedUser)
 }
 
 
+void sortPotentialRoommates(User &comparingUser)
+{
+  float correlationScore1 = 0, correlationScore2 = 0, correlationScore3 = 0, correlationScore4 = 0, correlationScore5 = 0;
+  
+  // Compare individual category scores and aggregate into a final correlation rate
+  for(int i = 0; i < comparingUser.possibleRoommates.size(); i++) // Creating a loop to compare the current user with all other users
+  {
+    // Comparing category 1
+    if (comparingUser.category1 >= comparingUser.possibleRoommates[i].category1)
+    {
+      correlationScore1 = comparingUser.possibleRoommates[i].category1 / comparingUser.category1;
+      // cout //<< comparingUser.category1 << "  " << comparingUser.possibleRoommates[i].category1 << endl
+      //   << "Category 1 Correlation percentage: " << correlationScore1 << endl;
+    }
+    else
+    {
+      correlationScore1 = (comparingUser.category1 / comparingUser.possibleRoommates[i].category1);
+      // cout //<< comparingUser.category1 << "   " << comparingUser.possibleRoommates[i].category1 << endl
+      //   << "Category 1 Correlation percentage: " << correlationScore1 << endl;
+    }
+    
+    // Comparing category 2
+    if (comparingUser.category2 >= comparingUser.possibleRoommates[i].category2)
+    {
+      correlationScore2 = comparingUser.possibleRoommates[i].category2 / comparingUser.category2;
+      // cout //<< comparingUser.category2 << "  " << comparingUser.possibleRoommates[i].category2 << endl
+      //   << "Category 2 Correlation percentage: " << correlationScore2 << endl;
+    }
+    else
+    {
+      correlationScore2 = (comparingUser.category2 / comparingUser.possibleRoommates[i].category2);
+      // cout //<< comparingUser.category2 << "   " << comparingUser.possibleRoommates[i].category2 << endl
+      //   << "Category 2 Correlation percentage: " << correlationScore2 << endl;
+    }
+    
+    // Comparing category 3
+    if (comparingUser.category3 >= comparingUser.possibleRoommates[i].category3)
+    {
+      correlationScore3 = comparingUser.possibleRoommates[i].category3 / comparingUser.category3;
+      // cout //<< comparingUser.category3 << "  " << comparingUser.possibleRoommates[i].category3 << endl
+      //   << "Category 3 Correlation percentage: " << correlationScore3 << endl;
+    }
+    else
+    {
+      correlationScore3 = (comparingUser.category3 / comparingUser.possibleRoommates[i].category3);
+      // cout //<< comparingUser.category3 << "   " << comparingUser.possibleRoommates[i].category3 << endl
+      //   << "Category 3 Correlation percentage: " << correlationScore3 << endl;
+    }
+    
+    // Comparing category 4
+    if (comparingUser.category4 >= comparingUser.possibleRoommates[i].category4)
+    {
+      correlationScore4 = comparingUser.possibleRoommates[i].category4 / comparingUser.category4;
+      // cout //<< comparingUser.category4 << "  " << comparingUser.possibleRoommates[i].category4 << endl
+      //   << "Category 4 Correlation percentage: " << correlationScore4 << endl;
+    }
+    else
+    {
+      correlationScore4 = (comparingUser.category4 / comparingUser.possibleRoommates[i].category4);
+      // cout //<< comparingUser.category4 << "   " << comparingUser.possibleRoommates[i].category4 << endl
+      //   << "Category 4 Correlation percentage: " << correlationScore4 << endl;
+    }
+    
+    // Comparing category 5
+    if (comparingUser.category5 >= comparingUser.possibleRoommates[i].category5)
+    {
+      correlationScore5 = comparingUser.possibleRoommates[i].category5 / comparingUser.category5;
+      // cout //<< comparingUser.category5 << "  " << comparingUser.possibleRoommates[i].category5 << endl
+      //   << "Category 5 Correlation percentage: " << correlationScore5 << endl;
+    }
+    else
+    {
+      correlationScore5 = (comparingUser.category5 / comparingUser.possibleRoommates[i].category5);
+      // cout //<< comparingUser.category5 << "   " << comparingUser.possibleRoommates[i].category5 << endl
+      //   << "Category 5 Correlation percentage: " << correlationScore5 << endl;
+    }
+    
+    comparingUser.finalScore = ((correlationScore1 + correlationScore2 + correlationScore3 + correlationScore4 + correlationScore5) / 5); // Calculating final correlation rate
+    comparingUser.possibleRoommates[i].finalScore = comparingUser.finalScore;
+    comparingUser.roommateCorrelations.push_back(comparingUser.finalScore); // Adding the final correlation rate to the parallel Correlation rate vector
+  }
+    
+  // Listing potential roommates and their correlation scores
+  comparingUser.listCorrelatedRoommates();
+  
+  // Copying the possible roommates for preservation
+  comparingUser.roommatePool = comparingUser.possibleRoommates; 
+  
+  // Sorting command
+  sort(comparingUser.roommatePool.begin(), comparingUser.roommatePool.end(),
+    [](const User& lhs, const User& rhs)  // Lambda function specifying the sort criteria
+    {
+        return lhs.finalScore > rhs.finalScore; // Returning the order so that the scores decrease
+    });
+}
+  
+  
+  // ------ DEFUNCT SORTING CODE ------
+  // // Scan the current list of roommate matches and place the user where their final correlation fits
+  // cout << endl << "Sorting Algorithm Test Code: " << endl;
+  // for(int currentPos = 0; currentPos < comparingUser.possibleRoommates.size(); currentPos++)
+  // {
+  //   // If this is the first user, push them in as the first element
+  //   if(currentPos == 0)
+  //   {
+  //     sortedRoommates.push_back(comparingUser.possibleRoommates[currentPos]);
+  //     cout << "First item added to the sorted list" << endl;
+  //   }
+    
+  //   // If no more possible roommates are listed, stop adding to the roommate list
+  //   else if(currentPos > (comparingUser.possibleRoommates.size())) 
+  //   {
+  //     break;
+  //   }
+    
+    
+  //   // COMPARING USER IS THE CURRENT TESTUSER.  USER AT POSSIBLEROOMMATES[CURRENTPOS] IS BEING COMPARED TO
+  //   // Non-edge cases
+  //   else
+  //   {
+  //     for(int )
+  //     cout << comparingUser.possibleRoommates[currentPos].finalScore << " vs. " << sortedRoommates[currentPos].finalScore << endl;
+      
+  //     // If the current correlation is higher than the previous correlation, put it in front of the previous correlation in the sorted list
+  //     // if(comparingUser.roommatePool[currentPos].finalScore > sortedRoommates[currentPos - 1].finalScore)
+  //     // {
+        
+  //     // }
+  //     // else
+  //     // {
+
+  //     // }
+  //   }
+  // }
+  
+  // comparingUser.listCorrelatedRoommates();
+  
+  // cout << endl;
+  // comparingUser.roommatePool = sortedRoommates;
+  // comparingUser.listRoommates();
+  
+  // return;
+  // };
+
+
 int main()
 {
   User testUser1, testUser2, testUser3, testUser4; // Creates a test user (uninitialized)
   
+  // Setting retrievable ID's for each user.
   testUser1.setID(1);
   testUser2.setID(2);
   testUser3.setID(3);
   testUser4.setID(4);
   
+  // Asking for user genders
   testUser1.initializePool();
   testUser2.initializePool();
   testUser3.initializePool();
   testUser4.initializePool();
   
+  // Check each of the user's survey results (Simulated with final category scores)
   testUser1.setCategories();
   testUser2.setCategories();
   testUser3.setCategories();
@@ -455,8 +637,8 @@ int main()
   
   cout << endl << "Test category scores set." << endl << endl;
   
-  // User category scores set.  Listing scores for verification.
   
+  // User category scores set.  Listing scores for review on execution.
   cout << "----- User 1 Scores ------" << endl;
   cout << "User 1 sex: " << testUser1.gender << endl;
   testUser1.listCategories();
@@ -470,23 +652,48 @@ int main()
   cout << "User 4 sex: " << testUser4.gender << endl;
   testUser4.listCategories();
   
-  // Sort user into appropriate pool based on gender and sports team 
+  
   cout << "Testing User 1 for compatible genders." << endl;
-  //Performing a gender comparison
+  // Performing a gender comparison (Needs to be functionalized for final version.  Only one user will be compared opposed to all four)
   compareGenders(testUser1, testUser2);
   compareGenders(testUser1, testUser3);
   compareGenders(testUser1, testUser4);
-  //Verifying if the user was indeed entered into the potential roommate pool
+  
+  compareGenders(testUser2, testUser1);
+  compareGenders(testUser2, testUser3);
+  compareGenders(testUser2, testUser4);
+  
+  compareGenders(testUser3, testUser1);
+  compareGenders(testUser3, testUser2);
+  compareGenders(testUser3, testUser4);
+  
+  compareGenders(testUser4, testUser1);
+  compareGenders(testUser4, testUser2);
+  compareGenders(testUser4, testUser3);
+  
+  //Verifying if the users were indeed entered into the potential roommate pool
   testUser1.listPotentialRoommates();
+  testUser2.listPotentialRoommates();
+  testUser3.listPotentialRoommates();
+  testUser4.listPotentialRoommates();
   
-  // Check each of the user's survey results
+  cout << endl << endl;
   
+  // Performing the comparison and sorting.  Refer to sortPotentialRoommates(User).
+  sortPotentialRoommates(testUser1);
+  sortPotentialRoommates(testUser2);
+  sortPotentialRoommates(testUser3);
+  sortPotentialRoommates(testUser4);
+  cout << endl << endl;
   
-    // Increment the appropriate category's total depending on responses present
-    
-  // Once the categories have been totalled up, compare
-  
+  // Listing off the final sortings for each user
+  testUser1.listRoommates();
+  testUser2.listRoommates();
+  testUser3.listRoommates();
+  testUser4.listRoommates();
+  cout << endl << endl;
 
+  cout << "Simulation Complete.";
 
   return EXIT_SUCCESS;
 }
