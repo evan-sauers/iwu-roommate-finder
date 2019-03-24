@@ -133,10 +133,17 @@ textarea {
     padding: 0px 40px 50px 30px !important;
     height: 625px;
     background-color: #FFFFFF;
-    background-image: url("../images/wesley.png");
+    /*background-image: url("../images/wesley.png");*/
     background-repeat: no-repeat;
     background-size: auto;
     background-position: right;
+}
+
+#wesley {
+    float: right;
+    margin-top: 75px;
+    margin-bottom: -300px;
+    width: 500px;
 }
 
 .takeSurvey {
@@ -151,6 +158,7 @@ textarea {
 
 #purpose {
     margin-right: 375px;
+    margin-bottom: -50px;
 }
 
 .box {
@@ -196,11 +204,71 @@ textarea {
 
 
 
+/* Media Queries */
+
+@media only screen and (max-width: 1350px) {
+    #wesley {
+        width: 400px;
+    }
+    
+    #purpose {
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #wesley {
+        width: 300px;
+    }
+    
+    #purpose {
+        margin-right: 100px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #purpose {
+        margin-right: 200px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
-    .content, .box, .welcomeContent {
+    .title {
+        font-size: 30px;
+    }
+    
+    .content, .box {
         width: 95%;
         margin-left: 5px;
     }
     
-
+    .welcomeContent {
+        width: 95%;
+        margin-left: 5px !important;
+        height: 550px;
+        margin-bottom: 50px !important;
+    }
+    
+    h1 {
+        font-size: 40px !important;
+    }
+    
+    #purpose {
+        margin-right: 0px;
+    }
+    
+    #surveyButton {
+        width: 225px;
+        font-size: 18px;
+    }
+    
+    #matchButton {
+        width: 225px;
+        font-size: 18px;
+    }
+    
+    #wesley {
+        margin-top: 40px;
+        width: 250px;
+    }
 }
