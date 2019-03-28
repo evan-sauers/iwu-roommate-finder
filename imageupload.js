@@ -2,9 +2,13 @@
 var database = firebase.database();
 
 function fileSubmitBtn() {
-   
-}  
-
-function displayImages() {
+    var ref = database.ref('images/' + userState);
+    var user = firebase.auth().currentUser;
     
+    var image = $("#imageUpload").val();
+
+        ref.set ({
+            "imageUpload" : image
+        });
+    alert("Upload Complete. Finish profile information at this time.")
 }

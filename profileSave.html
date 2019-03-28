@@ -34,7 +34,7 @@
                         <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
@@ -43,18 +43,16 @@
                 <button id="logout" onclick="mainApp.logOut()">Sign Out</button>
             </div>
         </nav>
-        
 
         <div class="container-fluid">
             <div class="row">
                 <!-- Process Section -->
                 <div class="col-lg-4">
                     <div class="content">
-                        <div id="fileSubmit">
-                          <p>IMAGE HERE</p>
-                        </div>
+                        <img id="imageRetrieve">
                     </div>
                 </div>
+                
                 <!-- Profile Section -->
                 <div class="col-lg-8">
                     <div class="profBefore">
@@ -98,7 +96,7 @@
         </div>
         <script src="firebase.js"></script>
         <script src="main.js"></script>
-        <script src="writedata.js"></script>
         <script src="readData.js"></script>
+        <script src="imageRetrieve.js"></script>
     </body>
 </html>

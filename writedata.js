@@ -12,7 +12,7 @@ function submitBtn() {
     var city = $("#city").val();
     var inputState = $("#inputState").val();
     var comment = $("#comment").val();
-    var email = $("#email").val();
+    //var email = $("#email").val();
     
     var userID = user.email.replace(/[^a-zA-Z ]/g, "");  
     
@@ -24,7 +24,7 @@ function submitBtn() {
         "city" : city,
         "inputState" : inputState,
         "comment" : comment,
-        "email" : email,
+       // "email" : email,
         "userID" : userID
     });
     

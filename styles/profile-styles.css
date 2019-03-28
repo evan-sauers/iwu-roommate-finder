@@ -2,53 +2,73 @@ body {
     background-color: whitesmoke !important;
 }
 
+.file-select {
+    margin-left: 25%;
+}
+
+#fileSubmit {
+    margin-top: 200px; 
+}
+
+.file-submit:hover, .subButton:hover {
+    background-color: #a50d29;
+}
+
 h1 {
     font-size: 80px !important;
+    text-align: center;
 }
 
-#logo {
-    height: 35px;
-    
-}
-
-#year {
-    color: #d21437;
-}
-
-.profBefore {
-    margin-top: 40px;
-}
-
-#little {
-    font-size: 12px;
-}
-
-.title {
-    font-family: 'Lato', sans-serif;
+.imageSubmit {
+    background-color: #d21437;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: 40%;
 }
 
 li {
     font-family: 'Lato', sans-serif;
 }
 
-#fileSubmit {
-    margin-top: 200px;
-    
+#little {
+    font-size: 12px;
 }
 
-.file-select {
-    margin-left: 25%;
+#logo {
+    height: 35px;
 }
 
-
-#process {
-    font-size: 40px !important;
+#logout {
+    background-color: #d21437;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 100px;
 }
 
 ol li {
     font-family: 'Lato', sans-serif;
     padding-top: 50px;
     font-size: 32px;
+}
+
+#process {
+    font-size: 40px !important;
+}
+
+.profBefore {
+    margin-top: 40px;
 }
 
 .subButton {
@@ -66,36 +86,10 @@ ol li {
     margin-bottom: 20px;
 }
 
-.file-submit {
-    background-color: #d21437;
-    border-radius: 4px;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-top: 25px;
-    margin-left: 40%;
+.title {
+    font-family: 'Lato', sans-serif;
 }
 
-.file-submit:hover, .subButton:hover {
-    background-color: #a50d29;
-}
-
-ol li {
-    padding-top: 50px;
-}
-
-#logout {
-    background-color: #d21437;
-    border-radius: 4px;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 5px;
-    transition: all 0.5s;
-    cursor: pointer;
-    width: 100px;
+#year {
+    color: #d21437;
 }

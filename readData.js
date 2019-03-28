@@ -27,4 +27,3 @@ ref.once("value").then(function(snapshots) {
         });
     }; 
 });
-
