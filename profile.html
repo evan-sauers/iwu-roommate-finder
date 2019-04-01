@@ -23,8 +23,8 @@
 
     <body>        
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="dashboard.html"><h2 class="title">IWU Roommate Finder</h2></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="dashboard.html"><h2 class="title"><b>IWU Roommate Finder</b></h2></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +34,7 @@
                         <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" id="myLink" href="#">Profile<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
@@ -45,15 +45,18 @@
         </nav>
 
         <div class="container-fluid">
-            <h1>Create Profile</h1>
+            <div class="top">
+                <h1>Create Profile</h1>
+            </div>
             <div class="row">
                 
                 <!-- Process Section -->
                 <div class="col-lg-4">
                     <div class="content">
                         <div id="fileSubmit">
-                          <input type="file" name="file_name" id="imageUpload" class="file-select" accept="image/*"/>
-                          <button class="imageSubmit" onclick="fileSubmitBtn()" id="file-path">SUBMIT</button>
+                            <h6>Profile Image:</h6><br>
+                            <progress value="0" max="100" id="progress"></progress>
+                            <input type="file" name="file_name" id="imageUpload" accept="image/*"/>
                         </div>
                     </div>
                 </div>
@@ -105,15 +108,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Email Section 
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <label for="list">Email:</label>
-                                    <p id="little"><i>Important: Please use your IWU email address.</i></p>
-                                    <input type="text" class="form-control" id="email">
-                                </div>
-                            </div>-->
                             
                             <!-- City / State Section -->
                             <div class="form-group">

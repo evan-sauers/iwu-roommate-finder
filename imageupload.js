@@ -1,14 +1,19 @@
-// Uploads images to Firebase and displays the images on the webpage
-var database = firebase.database();
+// Get image uploader
+var progress = document.getElementById('progress');
+var imageUpload = document.getElementById('imageUpload');
 
-function fileSubmitBtn() {
-    var ref = database.ref('images/' + userState);
-    var user = firebase.auth().currentUser;
+// Update progress bar and upload image to storage
+imageUpload.addEventListener('change', function(imageFile){
+    // Create file and upload
+    var file = imageFile.target.files[0];
+    var storageRef = firebase.storage().ref('images/' + userState);
+    var task = storageRef.put(file);
     
-    var image = $("#imageUpload").val();
-
-        ref.set ({
-            "imageUpload" : image
-        });
-    alert("Upload Complete. Finish profile information at this time.")
-}
+    // Update progress bar
+    task.on('state_changed', 
+        function bar(snapshot) {
+        var percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        progress.value = percent;
+    }
+    );
+});

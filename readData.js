@@ -7,6 +7,17 @@ ref.once("value").then(function(snapshots) {
             
             var re = firebase.database().ref("users/" + email);
             re.once("value").then(function(snapshot) {
+                
+                
+                var storageRef = firebase.storage().ref();
+                storageRef.child('images/' + userState).getDownloadURL().then(function(url) {
+                    var profileImage = url;
+
+                    document.querySelector('img').src = profileImage;
+
+                 }).catch(function(error) {
+
+                 });
 
                 var key = snapshot.key;
                 var first_val = snapshot.val().first;

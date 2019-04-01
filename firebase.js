@@ -11,6 +11,7 @@ var app_Firebase = {};
     };
     firebase.initializeApp(config);
     app_Firebase = firebase;
+    var storage = firebase.storage();
     
     
 })()
