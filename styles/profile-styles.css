@@ -47,6 +47,11 @@ h1 {
     margin-left: 40%;
 }
 
+input:required:focus {
+  border: 1px solid red;
+  outline: none;
+}
+
 #last {
     float: left;
 }
