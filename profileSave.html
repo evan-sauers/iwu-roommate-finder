@@ -23,8 +23,8 @@
 
     <body>        
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="dashboard.html"><h2 class="title">IWU Roommate Finder</h2></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="dashboard.html"><h2 class="title"><b>IWU Roommate Finder</b></h2></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +34,7 @@
                         <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" id="myLink" href="#">Profile<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Settings</a>
@@ -43,35 +43,37 @@
                 <button id="logout" onclick="mainApp.logOut()">Sign Out</button>
             </div>
         </nav>
-        
 
         <div class="container-fluid">
             <div class="row">
                 <!-- Process Section -->
                 <div class="col-lg-4">
                     <div class="content">
-                        <div id="fileSubmit">
-                          <p>IMAGE HERE</p>
-                        </div>
+                        <img src="profileImage" id="profileImage"/> 
                     </div>
                 </div>
+                
                 <!-- Profile Section -->
                 <div class="col-lg-8">
                     <div class="profBefore">
                         <div class="content">
                             <form class="form-horizontal">
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="col-lg-12">
                                         <div class="form-row">
-                                            <div class="form-group col-md-5">
-                                                <h3 id="first"></h3>
-                                                <h3 id="last"></h3>
+                                            <div class="form-group col-md-10">
+                                                <a id="editProfile">Edit</a>
+                                                <div id="name">
+                                                    <h1 id="first"></h1>
+                                                    <h1 id="last">&nbsp;</h1>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
+                                        <hr>
                                         <h5 id="year"></h5>
                                     </div>
                                 </div>
@@ -87,7 +89,6 @@
                                 <div class="form-group"> 
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <p id="bio"></p>
-                                        <p id="extra">userState: </p>
                                     </div>
                                 </div>
                             </form>
@@ -98,7 +99,8 @@
         </div>
         <script src="firebase.js"></script>
         <script src="main.js"></script>
-        <script src="writedata.js"></script>
         <script src="readData.js"></script>
+        <script src="imageRetrieve.js"></script>
+        <script src="editProfile.js"></script>
     </body>
 </html>

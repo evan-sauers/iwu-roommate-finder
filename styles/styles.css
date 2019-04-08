@@ -2,84 +2,50 @@ body {
     background-color: whitesmoke !important;
 }
 
+.box {
+    margin: 30px 0px 0px 40px;
+    width: 425px;
+    padding: 20px 80px 20px 30px !important;
+    background-color: #FFFFFF;
+}
+
+.content {
+    margin: 40px 40px 0px 40px;
+    padding: 30px 30px 30px 30px !important;
+    background-color: #FFFFFF;
+    width: 425px;
+}
+
+.fas {
+    font-size: 100px;
+}
+
 h1 {
     font-size: 80px !important;
 }
 
+#housing {
+    margin-left: 35%;
+}
 
 li {
     font-family: 'Lato', sans-serif;
 }
 
-#process {
-    font-size: 40px !important;
-}
-
 #logo {
     height: 35px;
-    
-}
-
-.title {
-    font-family: 'Lato', sans-serif;
-}
-
-ol li {
-    font-family: 'Lato', sans-serif;
-    padding-top: 43px;
-    font-size: 32px;
 }
 
 #logout {
-
-}
-
-textarea {
-    max-width: 100%;
-}
-
-.survey {
-    margin-top: 40px;
-    text-align: center;
-}
-
-#surveyButton {
     background-color: #d21437;
     border-radius: 4px;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
-    padding: 10px 20px 10px 20px;
+    padding: 5px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 150px 5px 5px 40px;
-    width: 300px;
-}
-
-#surveyButton span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-#surveyButton span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-#surveyButton:hover span {
-    padding-right: 25px;
-}
-
-#surveyButton:hover span:after {
-    opacity: 1;
-    right: 0;
+    width: 100px;
 }
 
 #matchButton {
@@ -121,52 +87,18 @@ textarea {
     right: 0;
 }
 
-.content {
-    margin: 40px 40px 0px 40px;
-    padding: 30px 30px 30px 30px !important;
-    background-color: #FFFFFF;
-    width: 425px;
+.nav-link:hover {
+    color: #d21437 !important;
 }
 
-.welcomeContent {
-    margin: 0px 40px 0px 40px !important; 
-    padding: 0px 40px 50px 30px !important;
-    height: 625px;
-    background-color: #FFFFFF;
-    background-image: url("../images/wesley.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: right;
+ol li {
+    font-family: 'Lato', sans-serif;
+    padding-top: 43px;
+    font-size: 32px;
 }
 
-.takeSurvey {
-    margin-top: 40px;
-    padding-top: 30px;
-}
-
-.welcome {
-    padding: 0px 40px 20px 40px !important;
-
-}
-
-#purpose {
-    margin-right: 375px;
-}
-
-.box {
-    margin: 30px 0px 0px 40px;
-    width: 425px;
-    padding: 20px 80px 20px 30px !important;
-    background-color: #FFFFFF;
-}
-
-#surveyBox {
-    width: 700px; 
-    height: 9900px; 
-}
-
-#housing {
-    margin-left: 35%;
+#process {
+    font-size: 40px !important;
 }
 
 .profiles {
@@ -176,31 +108,165 @@ textarea {
     margin-bottom: 100px;
 }
 
-.fas {
-    font-size: 100px;
+#purpose {
+    margin-right: 375px;
+    margin-bottom: -50px;
 }
 
+.survey {
+    margin-top: 40px;
+    text-align: center;
+}
 
+#surveyBox {
+    width: 700px; 
+    height: 9900px; 
+}
 
-#logout {
+#surveyButton {
     background-color: #d21437;
     border-radius: 4px;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    padding: 5px;
+    font-size: 28px;
+    padding: 10px 20px 10px 20px;
     transition: all 0.5s;
     cursor: pointer;
-    width: 100px;
+    margin: 150px 5px 5px 40px;
+    width: 300px;
+}
+
+#surveyButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#surveyButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#surveyButton:hover span {
+    padding-right: 25px;
+}
+
+#surveyButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.takeSurvey {
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+.title {
+    font-family: 'Lato', sans-serif;
+}
+
+.welcome {
+    padding: 0px 40px 20px 40px !important;
+}
+
+.welcomeContent {
+    margin: 0px 40px 0px 40px !important; 
+    padding: 0px 40px 50px 30px !important;
+    height: 625px;
+    background-color: #FFFFFF;
+    /*background-image: url("../images/wesley.png");*/
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right;
+}
+
+#wesley {
+    float: right;
+    margin-top: 75px;
+    margin-bottom: -300px;
+    width: 500px;
 }
 
 
+/* Media Queries */
 
 @media only screen and (max-width: 600px) {
-    .content, .box, .welcomeContent {
+    .title {
+        font-size: 30px;
+    }
+    
+    .content, .box {
         width: 95%;
         margin-left: 5px;
     }
     
+    .welcomeContent {
+        width: 95%;
+        margin-left: 5px !important;
+        height: 550px;
+        margin-bottom: 50px !important;
+    }
+    
+    #purpose {
+        width: 100% !important;
+    }
+    
+    h1 {
+        font-size: 40px !important;
+    }
+    
+    #purpose {
+        margin-right: 0px;
+    }
+    
+    #surveyButton {
+        width: 225px;
+        font-size: 18px;
+    }
+    
+    #matchButton {
+        width: 225px;
+        font-size: 18px;
+    }
+    
+    #wesley {
+        margin-top: 40px;
+        width: 250px;
+    }
+}
 
+@media only screen and (max-width: 1350px) {
+    #wesley {
+        width: 400px;
+    }
+    
+    #purpose {
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #wesley {
+        width: 300px;
+    }
+    
+    #purpose {
+        margin-right: 100px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #purpose {
+        margin-right: 200px;
+    }
 }
