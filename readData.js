@@ -1,12 +1,23 @@
 var user = firebase.auth().currentUser;
 
 if (user != null) {
+    // Connect to database
+    var database = firebase.database();
+
+    // Ref user table on Firebase
+    var ref = database.ref('users');
+
+    // get rid of datbase naming
     var email = user.email.replace(/[^a-zA-Z ]/g, "");
+   
+    // replace database naming
+    var newEmail = firebase.database().ref("users/" + email);
+   
+    ref.push() ({
+        "newEmail": newEmail
+    });
+};
 
-    console.log("  Email: " + email);
-}
-
-var ref = firebase.database().ref("users/" + "evansauersmyemailindwesedu");
 //var ref = firebase.database().ref("users/" + userState);
 ref.once("value").then(function(snapshot) {
     
